@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<meta charset="utf-8">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-info text-dark bg-opacity-10 m-0">
+
+  <header>
+    <nav class="bg-info text-dark bg-opacity m-0">
+      <h1 class="text-center p-3 " id="titulo">Calcular Frete</h1>
+    </nav>
+  </header>
+
+  <main>
+    <div class=" container">
+      <div class="row justify-content-center">
+        <div class="col">
+          <form action="script.php" method="POST">
+            <div class="mb-3">
+              <label for="CEP_ORIGEM" class="form-label">* CEP Origem</label>
+              <input type="number" class="form-control" id="CEP_ORIGEM" name="CEP_ORIGEM" placeholder="CEP Origem"
+                required value="87303070">
+            </div>
+            <div class="mb-3">
+              <label for="CEP_DESTINO" class="form-label">* CEP Destino</label>
+              <input type="number" class="form-control" id="CEP_DESTINO" name="CEP_DESTINO"
+                placeholder="CEP Destinatário" required value="40430190">
+            </div>
+
+            <div class="mb-3">
+              <select class="form-select" id="SERVICOS" name="SERVICOS">
+                <option selected value="0">Selecione o Serviço</option>
+                <option value="04014">SEDEX</option>
+                <option value="04790">SEDEX 10</option>
+                <option value="04782">SEDEX 12</option>
+                <option value="04804">SEDEX HOJE</option>
+                <option value="04510">PAC</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <select class="form-select" aria-label="Default select example" name="FORMATO" id="FORMATO">
+                <option selected value="FORMATO_INVALIDO">Selecione com Formato da Embalagem</option>
+                <option value="1">Caixa ou Pacote</option>
+                <option value="2">Rolo ou Prisma</option>
+                <option value="3">Envelope</option>
+              </select>
+            </div>
+
+            <div class="mb-3 campo">
+              <div class="column">
+                <label for="PESO" class="form-label ">Peso</label>
+                <input type="text" class="form-control" id="PESO" name="PESO" placeholder="Peso da Embalagem" required>
+              </div>
+              <div class="column">
+                <label for="COMPRIMENTO" class="form-label ">Comprimento da Embalagem</label>
+                <input type="text" class="form-control" id="COMPRIMENTO" name="COMPRIMENTO"
+                  placeholder="Comprimento da Embalagem" required>
+              </div>
+            </div>
+
+            <div class="mb-3 campo">
+              <div class="column">
+                <label for="ALTURA" class="form-label ">Altura da Embalagem</label>
+                <input type="text" class="form-control" id="ALTURA" name="ALTURA" placeholder="Altura da Embalagem">
+              </div>
+              <div class="column">
+                <label for="LARGURA" class="form-label ">Largura da embalagem</label>
+                <input type="text" class="form-control" id="LARGURA" name="LARGURA" placeholder="Largura da Embalagem">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="DIAMETRO" class="form-label">Diamentro</label>
+              <input type="text" class="form-control" id="DIAMETRO" name="DIAMETRO"
+                placeholder="Preencha se formato for Rolo/Prisma" value="0">
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="MAO_PROPRIA" name="MAO_PROPRIA">
+              <label class="form-check-label" for="MAO_PROPRIA">
+                Mão Propria
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="RECEBIMENTO" name="RECEBIMENTO">
+              <label class="form-check-label" for="RECEBIMENTO">
+                Aviso de Recebimento
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Calcular Frete</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>
